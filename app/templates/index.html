@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <meta charset="utf-8" />
+  <title>Mi primera aplicación web</title>
+  <link type="text/css" rel="stylesheet"
+        href="{{ url_for('static', filename='hello.css')}}" />
+</head>
+<body id="center-div">
+
+	<p>Hola Mundo!</p><br>
+	<p>Adios Mundo!</p>
+	<hr>
+	<p>Esto es una versión mejorada</p>
+	<p>Esto es una versión mejorada pero chunga! que lo mismo se rompe</p>
+
+	<h1> Hola {{user.username}} </h1> 
+	{% if contador_visitas %}
+	<p>Nos has visitado {{contador_visitas}} veces</p>
+	{% else %}
+	<p>No puedo saber cuántas veces nos has visitado. Activa REDIS</p>
+	{% endif %}
+</body>
+</html>
